@@ -18,7 +18,7 @@ namespace ElevatorTests
         [Test]
         public void TestCallElevator()
         {
-            elevator.callElevator(5);
+            elevator.callElevator(5, 2);
         }
 
         [Test]

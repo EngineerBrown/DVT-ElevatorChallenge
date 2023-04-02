@@ -39,14 +39,22 @@ namespace ElevatorChallenge
         #endregion
 
         #region Public Methods
-        public void callElevator(int elevatorNo)
+        public void callElevator(int elevatorNo, int userFloor)
         {
             Console.WriteLine(string.Format("Elevator {0} Is coming", elevatorNo));
-            for (int i = maxFloors; i >= currentFloor; i--)
-            {
-                Console.WriteLine(i + "\n");
-                Thread.Sleep(1000);
-            }
+            if (currentFloor < userFloor)
+                for (int i = currentFloor; i <= userFloor; i++)
+                {
+                    Console.WriteLine(i + "\n");
+                    Thread.Sleep(1000);
+                }
+
+            else
+                for (int i = userFloor; i >= currentFloor; i--)
+                {
+                    Console.WriteLine(i + "\n");
+                    Thread.Sleep(1000);
+                }
             Console.WriteLine("Opening Doors");
         }
 
