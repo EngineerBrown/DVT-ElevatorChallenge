@@ -1,0 +1,22 @@
+# DVT-ElevatorChallenge
+
+1. The program when launched asks the user whether they wish to configure the Elevator or use default configurations
+2. Elevator configurations include:
+	Number  of elevators in the building
+	Maximum Floors (max floors)
+	Current Floor (which is randomly assigned at first)
+	Underground/Basement Floors
+3. If the user accepts default configurations the following values are set:
+	No of Elevators: 2
+	MaxFloors : 10
+	CurrFloor: Random
+	Underground/Basement Floors: 2
+	Else the program accepts the configurations entered by the user.
+4. After configurations are done the user may summon the elevator by selecting whether they are going up or down
+5. The program calls the nearest elevator by comparing users currentFloor to each elevators currentFloor
+6. The user is then able to 
+	a. open/close doors
+	b. add multiple destination floors
+7. The program simulates movement to the next destination floor 
+8. The program restricts weight and maximum occupants by keeping track of current occupants 
+10. 
