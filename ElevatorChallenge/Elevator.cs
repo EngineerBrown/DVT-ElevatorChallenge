@@ -39,6 +39,8 @@ namespace ElevatorChallenge
         #endregion
 
         #region Public Methods
+
+        //Calls the nearest elevator
         public void callElevator(int elevatorNo, int userFloor)
         {
             Console.WriteLine(string.Format("Elevator {0} Is coming", elevatorNo));
@@ -50,7 +52,7 @@ namespace ElevatorChallenge
                 }
 
             else
-                for (int i = userFloor; i >= currentFloor; i--)
+                for (int i = currentFloor; i >= userFloor; i--)
                 {
                     Console.WriteLine(i + "\n");
                     Thread.Sleep(1000);
@@ -58,9 +60,9 @@ namespace ElevatorChallenge
             Console.WriteLine("Opening Doors");
         }
 
-
+        //Simulates downward movement of the elevator
         public void moveDown()
-        { 
+        {
             for (int i = currentFloor; i >= destinationFloors[0]; i--)
             {
                 Console.WriteLine(i + "\n");
@@ -71,7 +73,7 @@ namespace ElevatorChallenge
             //Console.WriteLine("Opening Doors");
         }
 
-
+        //Simulates Upward movment of the elevator
         public void moveUp()
         {
             for (int i = currentFloor; i <= destinationFloors[0]; i++)
@@ -84,6 +86,7 @@ namespace ElevatorChallenge
             //Console.WriteLine("Opening Doors");
         }
 
+        //checks if maximum occupancy is exceeded
         public bool maxOcupencyExceeded(int newOccupants)
         {
             if ((newOccupants + currentOccupants) <= maxOccupants)
